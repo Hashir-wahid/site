@@ -13,6 +13,24 @@ function nextSlide() {
     showSlide(currentSlide);
 }
 
+// Function to redirect to WhatsApp with a product-specific message
+function redirectToWhatsApp(productName) {
+    const whatsappBaseUrl = "https://wa.me/923235643963/?text=";
+    const message = `I am interested in buying the ${productName}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`${whatsappBaseUrl}${encodedMessage}`, '_blank');
+}
+
+// Attach event listeners to all Buy Now buttons
+const buyNowButtons = document.querySelectorAll('.buy-now');
+buyNowButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const productName = button.getAttribute('data-product-name');
+        redirectToWhatsApp(productName);
+    });
+});
+
+
 // Start the slideshow
 setInterval(nextSlide, 3000);
 
