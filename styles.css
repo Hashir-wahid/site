@@ -118,6 +118,12 @@ section.products .product {
     background-color: #2e2e2e;
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.products .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 section.products .product img {
@@ -144,6 +150,39 @@ section.products .product button {
 section.products .product button:hover {
     background-color: #444;
     color: #fff;
+}
+
+section.founder {
+    text-align: center;
+    margin-top: 40px;
+    color: #fff;
+}
+
+section.founder .founder-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+section.founder .founder-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+section.founder .founder-image:hover {
+    transform: scale(1.1);
+}
+
+section.founder .founder-description {
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 500px;
 }
 
 section.about-us {
